@@ -25,11 +25,11 @@ const register = Joi.object({
 const login = Joi.object({
   body: Joi.object({
     email: Joi.string().email({ minDomainSegments: 2 }).required(),
-    password: Joi.string().required()
-  })
+    password: Joi.string().required(),
+  }),
 }).unknown(true);
 
 export default {
   register,
-  login
+  login,
 };

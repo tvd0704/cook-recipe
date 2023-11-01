@@ -1,4 +1,4 @@
-import { signOut } from './logic/user.service';
+import { signOut } from "./logic/user.service";
 import { Router } from "express";
 import { catchError } from "../../utilities/errorHandler";
 import userController from "./user.controller";
@@ -12,7 +12,10 @@ userRouter.post(
   catchError(userController.register)
 );
 
-userRouter.post("/login", validateDto(userDto.login), catchError(userController.login))
+userRouter.post(
+  "/login",
+  validateDto(userDto.login),
+  catchError(userController.login)
+);
 
-
-userRouter.post("/signout",catchError(userController.signOut))
+userRouter.post("/signout", catchError(userController.signOut));

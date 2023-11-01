@@ -23,21 +23,20 @@ export class Recipe {
   content: string;
 
   @Column({ type: "text", nullable: true })
-  openingText:string;
-
-  @Column({ type: "text",nullable: true })
-  bodyText:string;
+  openingText: string;
 
   @Column({ type: "text", nullable: true })
-  ingredient:string;
+  bodyText: string;
 
+  @Column({ type: "text", nullable: true })
+  ingredient: string;
 
   @Column({ type: "varchar", default: null })
   image: string;
 
-  @ManyToOne(() => User, user => user.userId, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'createdBy' })
-  @Column({ type: 'uuid' })
+  @ManyToOne(() => User, (user) => user.userId, { onDelete: "CASCADE" })
+  @JoinColumn({ name: "createdBy" })
+  @Column({ type: "uuid" })
   createdBy: string;
 
   @CreateDateColumn()

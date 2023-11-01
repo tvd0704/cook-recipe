@@ -6,7 +6,6 @@ export const addRecipe = async (
   res: Response,
   next: NextFunction
 ) => {
-  
   req.body.image = req.file?.filename;
   const recipe = await recipeService.addRecipe({
     ...req.body,
@@ -70,6 +69,19 @@ export const updateRecipe = async (
     recipeData: req.body,
     credential: req.credential,
   });
+
+  res.status(200).json({
+    status: "success",
+    data: recipe,
+  });
+};
+
+export const searchRipe = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const recipe = await recipeService.searchRipe(req.query.search_query);
 
   res.status(200).json({
     status: "success",

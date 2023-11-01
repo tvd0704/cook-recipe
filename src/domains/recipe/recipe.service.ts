@@ -46,21 +46,39 @@ export const getAllRecipe = async (credential: CredentialUser) => {
   return recipes;
 };
 
-export const getRecipe = async (recipeId: string, credential: CredentialUser) => {
-    const recipe = await recipeRepository.findOneBy({ recipeId });
-    return recipe;
+export const getRecipe = async (
+  recipeId: string,
+  credential: CredentialUser
+) => {
+  const recipe = await recipeRepository.findOneBy({ recipeId });
+  return recipe;
+};
+
+export const findOne = async ({
+  query,
+  checkExistence,
+  credential,
+}: IFindOne) => {
+  const existingRecipe = await recipeRepository.findOneBy(query);
+
+  if (checkExistence?.flag && !existingRecipe) {
+    throw new AppError(
+      checkExistence.errorMsg ?? "Car does not exist",
+      "NotFound",
+      404
+    );
   }
 
-  export const findOne = async ({ query, checkExistence, credential }: IFindOne) => {
-    const existingRecipe = await recipeRepository.findOneBy(query);
-  
-    if (checkExistence?.flag && !existingRecipe) {
-      throw new AppError(checkExistence.errorMsg ?? "Car does not exist", "NotFound", 404);
-    }
-  
-    validateDataAccess(existingRecipe, credential, "createdBy");
-  
-    return existingRecipe;
-  }
-  
-  
+  validateDataAccess(existingRecipe, credential, "createdBy");
+
+  return existingRecipe;
+};
+
+export const searchRipe = async (search_query: any) => {
+  var query = `
+    SELECT recipeId FROM recipes
+    WHERE title LIKE '%${search_query}%'`;
+
+  const recipe = dataSource.query(query);
+  return recipe;
+};

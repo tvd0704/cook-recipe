@@ -53,7 +53,6 @@ export class User {
   @UpdateDateColumn()
   updatedAt: Date;
 
-
   @BeforeInsert()
   @BeforeUpdate()
   async hashPassword() {
