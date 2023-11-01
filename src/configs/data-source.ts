@@ -4,11 +4,11 @@ import { entities } from "../domains/entities";
 
 export const dataSource = new DataSource({
   type: "mysql",
-  host: "sql.freedb.tech",
-  port: 3306,
-  username: "freedb_tvd-user",
-  password: "?Sy?UQm4CBhdVw?",
-  database: "freedb_cookdb",
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT as any,
+  username: process.env.DB_USERNAME,
+  password:"",
+  database: process.env.DB_NAME,
   synchronize: true,
   logging: false,
   entities,
