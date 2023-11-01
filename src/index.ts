@@ -28,9 +28,11 @@ app.use("/user", router.userRouter);
 app.use("/user/recipe", router.recipeRouter)
 app.use(handleException);
 
-app.get('/', (_req: Request, res: Response) => {
-  return res.send(`Express Typescript on Vercel ${process.env.PORT }`)
-})
+app.get("/", (_req: Request, res: Response) => {
+  return res.send(
+    `Express Typescript on Vercel ${process.env.DB_NAME} ${process.env.DB_HOST} ${process.env.DB_USERNAME} ${process.env.DB_PASSWORD} ${process.env.DB_NAME}  `
+  );
+});
 
 const port = process.env.PORT || 3000;
 
