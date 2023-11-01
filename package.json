@@ -43,5 +43,10 @@
     "typescript": "^5.2.2",
     "@types/jsonwebtoken": "^8.5.9",
     "@types/cors": "^2.8.12"
-  }
+  },
+   "pre-commit": [
+      "ts.check",
+      "build",
+      "add-build"
+  ]
 }
