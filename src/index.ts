@@ -28,7 +28,7 @@ app.use("/user", router.userRouter);
 app.use("/user/recipe", router.recipeRouter)
 app.use(handleException);
 
-app.get('/', (_req: Request, res: Response) => {
+app.get('/user/user/test', (_req: Request, res: Response) => {
   return res.send('Express Typescript on Vercel')
 })
 
