@@ -30,7 +30,8 @@
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.17",
     "jsonwebtoken": "^8.5.1",
-    "joi": "^17.9.2"
+    "joi": "^17.9.2",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.1",
@@ -40,6 +41,7 @@
     "joi-to-typescript": "^4.9.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
-    "@types/jsonwebtoken": "^8.5.9"
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/cors": "^2.8.12"
   }
 }
