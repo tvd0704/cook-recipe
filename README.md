@@ -5,9 +5,9 @@ Welcome to Your Project  Cook Recipe back-end! This project does something amazi
 npm install
 
 # run project
-node >= 16
-deno extension vscode to write code
-docker
+1.make .env file for config variable on mysql
+2.for run project npm run start:dev
+3.enjoy for code
 
 # build
 npm run build
