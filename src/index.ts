@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import "./configs/data-source";
 import cors from 'cors';
 import router from './domains/routers';
-import { handleException } from '../src/utilities/errorHandler';
+ import { handleException } from './utilities/errorHandler';
 import bodyParser  from 'body-parser';
 import path from 'path';
 
