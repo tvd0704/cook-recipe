@@ -28,6 +28,10 @@ app.use("/user", router.userRouter);
 app.use("/user/recipe", router.recipeRouter)
 app.use(handleException);
 
+app.get('/', (_req: Request, res: Response) => {
+  return res.send('Express Typescript on Vercel')
+})
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
