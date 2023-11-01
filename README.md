@@ -1,5 +1,5 @@
 # cook-recipe
-Welcome to Your Project  Cook Recipe back-end! This project does something amazing and awesome nodejs express.
+Welcome to Your Project  Cook Recipe back-end! This project does something amazing and awesome node typescrip express.
 
 # install
 npm install
